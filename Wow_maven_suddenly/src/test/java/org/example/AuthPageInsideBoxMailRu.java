@@ -7,16 +7,18 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AuthPageInsideBoxMailRu {
 
-//    public void AuthPageInside
     public WebDriver driver;
     public AuthPageInsideBoxMailRu(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
+    public AuthPageInsideBoxMailRu(String secretCode) {
+        secretCode = this.secretCode;
+    }
+
 
     @FindBy(xpath = "//span[contains(@class, 'sp__normal')]")
     private WebElement neededMassageWithCodeFromMailBox;
-
     public void goToMessageWithSecretCode() throws InterruptedException {
         Thread.sleep(5000);
         neededMassageWithCodeFromMailBox.click();
@@ -24,8 +26,8 @@ public class AuthPageInsideBoxMailRu {
 
     @FindBy(xpath = "//tr/td[contains(@style, 'padding')]/descendant::td/p[3]/b")
     private WebElement getCodeFromMailRuMassage;
-//    public String forInputText = getCodeFromMailRuMassage.getText();
+    public String secretCode;
     public String getSecretCodeFromMessage() {
-        return getCodeFromMailRuMassage.getText();
+        return secretCode = getCodeFromMailRuMassage.getText().intern();
     }
 }

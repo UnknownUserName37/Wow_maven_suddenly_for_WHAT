@@ -7,16 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.example.RubExmplGoToRegMailDomainOnYandexService.yandexTab;
 
-public class LoginAuthPageYandexRu {
+public class LoginAuthPageYandexRu{
 
-    public static AuthPageInsideBoxMailRu authPageInsideBoxMailRu;
+    public AuthPageInsideBoxMailRu exAuthMailPage;
 
     public WebDriver driver;
 
     public LoginAuthPageYandexRu(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
-        authPageInsideBoxMailRu = new AuthPageInsideBoxMailRu(driver);
+        exAuthMailPage = new AuthPageInsideBoxMailRu(driver);
+
     }
 
     @FindBy(xpath = "//a[@class = 'CurrentAccount']")
@@ -52,13 +53,11 @@ public class LoginAuthPageYandexRu {
     private WebElement submitYandexSecretButton;
     @FindBy(xpath = "//input[@dir = 'ltr']")
     private WebElement enterSecretYandexField;
-
     public void inputSecretMailCodeInYandexFinishTest() throws InterruptedException {
         Thread.sleep(5000);
-        System.out.println("Here?");
         driver.switchTo().window(yandexTab);
-        enterSecretYandexField.sendKeys(authPageInsideBoxMailRu.getSecretCodeFromMessage());
+        System.out.println("я " + exAuthMailPage.getSecretCodeFromMessage() + " и я тварь");
+        enterSecretYandexField.sendKeys(exAuthMailPage.getSecretCodeFromMessage());
         submitYandexSecretButton.click();
-
     }
 }

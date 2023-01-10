@@ -64,21 +64,20 @@ public class RubExmplGoToRegMailDomainOnYandexService {
 
         signInPageMainMailRu.goToMailAuthFieldsButton();
 
-        popUpAuthPageMailRu.swithToThisCqweqwsdfsddsgf(); //название метода, потому что долго искал. )
+        popUpAuthPageMailRu.switchToThisCqweqwsdfsddsgf(); //название метода, потому что долго искал. )
         popUpAuthPageMailRu.inputLoginFields();
         popUpAuthPageMailRu.clickToGoPasswordInputFields();
         popUpAuthPageMailRu.inputMailPassword();
         popUpAuthPageMailRu.clickSignInMailRu();
 
         authPageInsideBoxMailRu.goToMessageWithSecretCode();
-        authPageInsideBoxMailRu.getSecretCodeFromMessage();
-
         loginAuthPageYandexRu.inputSecretMailCodeInYandexFinishTest();
     }
 
     @AfterClass
     public static void tearsDown() {
         driver.quit();
-        System.out.println("Молодец.\n ↓╣537Sн╜__•=}♣↓5'☻'♣4Zu⌂■!");
+        System.out.println("Молодец.\n↓╣537Sн╜__•=}♣↓5'☻'♣4Zu⌂■!");
     }
 }
+

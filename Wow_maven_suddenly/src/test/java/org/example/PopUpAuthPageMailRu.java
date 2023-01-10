@@ -16,7 +16,7 @@ public class PopUpAuthPageMailRu {
     //SupposedFrame
     @FindBy(xpath = "//iframe[@class='ag-popup__frame__layout__iframe']")
     private WebElement modPop;
-    public void swithToThisCqweqwsdfsddsgf() {
+    public void switchToThisCqweqwsdfsddsgf() {
         driver.switchTo().frame(modPop);
     }
 
